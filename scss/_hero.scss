@@ -1,0 +1,197 @@
+.hero {
+    width: 90%;
+    max-width: 2400px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.hero-title-div {
+    width: 47%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 30px;
+}
+
+.hero-title-div h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 59.6px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.hero-title-div p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.enter {
+    width: 90%;
+    height: 66px;
+    border: 1px solid #EAEAEA;
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.enter h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #EAEAEA;
+}
+
+.join-now {
+    width: 30%;
+    height: 50px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #02897A;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    color: #EAEAEA;
+    cursor: pointer;
+}
+
+.join-now:hover {
+    background: #02695B;
+}
+
+.hero-title-div img {
+    width: 287px;
+    height: auto;
+    opacity: 1;
+}
+
+.hero-img {
+    width: 50%;
+    height: 90%;
+    overflow: hidden;
+}
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s linear;
+}
+
+.hero-img img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .hero {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .hero-title-div, .hero-img {
+        width: 100%;
+    }
+
+    .hero-title-div {
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-title-div h1 {
+        font-size: 36px;
+        line-height: 50px;
+    }
+
+    .hero-title-div p {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .enter {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    .enter h2 {
+        margin-bottom: 10px;
+    }
+
+    .join-now {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title-div h1 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+
+    .hero-title-div p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .enter h2 {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .join-now {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title-div h1 {
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    .hero-title-div p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .enter {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .enter h2 {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .join-now {
+        font-size: 12px;
+    }
+}

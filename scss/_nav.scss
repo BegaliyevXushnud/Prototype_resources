@@ -1,0 +1,166 @@
+$bg_color: rgba(31, 46, 53, 1);
+$font_color: #fff;
+$font_color_2: rgba(31, 46, 53, 1);
+
+%global_flex {
+    display: flex;
+    align-items: center;
+}
+
+@mixin btn($border, $bg_color) {
+    border: $border;
+    background-color: $bg_color;
+}
+
+%global-hover {
+    &:hover {
+        background: $bg_color;
+        color: $font_color_2;
+        border: 1px solid $bg_color;
+    }
+}
+
+nav {
+    background-color: $bg_color;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid aqua;
+    z-index: 10;
+    padding: 0px 15px;
+
+    .nav-logo {
+        width: 150px;
+        height: 80px;
+        cursor: pointer;
+    }
+
+    .nav-items {
+        @extend %global_flex;
+        gap: 24px;
+
+        .nav-links {
+            @extend %global_flex;
+            gap: 24px;
+        }
+
+        .nav-auth {
+            display: none;
+        }
+
+        .nav-auth__item {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #4b4b4b;
+            @extend %global_flex;
+            justify-content: center;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .nav-menu {
+            display: none;
+        }
+
+        .nav-links__item {
+            color: $font_color;
+            text-decoration: none;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                background: rgba(2, 137, 122, 1);
+                height: 3px;
+                width: 0;
+                left: 0;
+                bottom: -10px;
+                transition: all 0.3s linear;
+            }
+
+            &:hover {
+                color: rgba(2, 137, 122, 1);
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+        }
+
+        .nav-actions {
+            @extend %global_flex;
+            gap: 24px;
+        }
+
+        button {
+            padding: 10px 22px;
+            border-radius: 5px;
+            color: $font_color;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+
+            &:nth-child(1) {
+                @include btn(1px solid #ccc, transparent);
+                &:hover {
+                    background: $font_color;
+                    color: $font_color_2;
+                    border: 1px solid $font_color;
+                }
+            }
+
+            &:nth-child(2) {
+                @include btn(none, rgba(2, 137, 122, 1));
+                &:hover {
+                    background: lighten(rgba(2, 137, 122, 1), 10%);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    nav {
+        .nav-items {
+            display: flex;
+            gap: 16px;
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-menu {
+                display: block;
+                order: 4;
+            }
+
+            .nav-actions {
+                display: flex;
+                gap: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        .nav-items {
+            .nav-menu {
+                order: 0;
+            }
+
+            button {
+                display: none;
+            }
+
+            .nav-auth {
+                display: block;
+            }
+        }
+    }
+}

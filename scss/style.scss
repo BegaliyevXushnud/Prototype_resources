@@ -1,0 +1,17 @@
+
+@use "./nav";
+@use "./main";
+@use "./hero";
+@use "./stories";
+@use "./contact";
+@use "./footer";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    background-color: rgba(31, 46, 53, 1);
+}
